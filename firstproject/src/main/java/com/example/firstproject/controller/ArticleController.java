@@ -38,7 +38,7 @@ public class ArticleController {
         Article saved = articleRepository.save(article); // article 엔티티를 저장해 save객체에 반환
         //System.out.println(saved.toString()); // article이 DB에 잘 저장 되는지 확인 출력
         log.info(saved.toString());
-        return"/articles/new";
+        return"redirect:/articles/" + saved.getId();
     }
 
     @GetMapping("/articles/{id}")

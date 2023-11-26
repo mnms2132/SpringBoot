@@ -35,7 +35,7 @@ public class MemberController {
         //Member saved = memberRepository.save(member); // article 엔티티를 저장해 save객체에 반환
         Member saved = memberRepository.save(member);
         log.info(saved.toString());
-        return "";
+        return "redirect:/members/" + saved.getId();
     }
 
     @GetMapping("/members/{id}")
